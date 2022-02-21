@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地图初始化</title>
+    <!-- demo样式文件 -->
+    <link rel="stylesheet" href="https://minedata.cn/support/static/api/demo/js-api/zh/css/demo.css">
+    <!-- 引入MineMap API插件 -->
+    <link rel="stylesheet" href="https://minedata.cn/minemapapi/v2.1.0/minemap.css">
+    <script src="https://minedata.cn/minemapapi/v2.1.0/minemap.js"></script>
+    <style>
+        #map {
+			
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    /**
+     * 全局参数设置
+     */
+    minemap.domainUrl = 'https://minedata.cn';
+	minemap.dataDomainUrl = 'https://minedata.cn';
+	minemap.serverDomainUrl = 'https://minedata.cn';
+	minemap.spriteUrl = 'https://minedata.cn/minemapapi/v2.1.0/sprite/sprite';
+	minemap.serviceUrl = 'https://minedata.cn/service/';
+
+    /**
+     * key、solution设置
+     */
+    minemap.key = '16be596e00c44c86bb1569cb53424dc9';
+    minemap.solution = 12877;
+
+    /**
+     * 初始化地图实例
+     */
+    var map = new minemap.Map({
+        container: 'map',
+        style: 'https://minedata.cn/service/solu/style/id/12877', /*底图样式*/
+        center: [116.46,39.92], /*地图中心点*/
+        zoom: 10, /*地图默认缩放等级*/
+        pitch: 0, /*地图俯仰角度*/
+        maxZoom: 17, /*地图最大缩放等级*/
+        minZoom: 3,  /*地图最小缩放等级*/
+        projection: 'MERCATOR'
+    });
+
+</script>
+</body>
